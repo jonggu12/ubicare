@@ -1,0 +1,12 @@
+beautifulsoup4
+matplotlib
+webdriver_manager
+selenium
+pymysql
+kiwisolver
+scikit-learn
+joblib
+tensorflow
+streamlit
+mysql-connector-python
+tqdm

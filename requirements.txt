@@ -3,7 +3,6 @@ streamlit_option_menu
 mysql-connector-python
 numpy
 pandas
-os
 PIL
 scikit-learn
 tensorflow
@@ -12,8 +11,6 @@ seaborn
 cv2
 concurrent.futures
 scipy
-kerasstreamlit-chat
-streamlit_option_menu
 openai
 gdown
 pymysql
@@ -23,3 +20,10 @@ opencv-python-headless
 h5py
 Pillow
 requests
+beautifulsoup4
+webdriver_manager
+selenium
+kiwisolver
+joblib
+google_play_scraper
+cryptography
