@@ -12,7 +12,7 @@ import os
 import tempfile
 from streamlit_webrtc import RTCConfiguration, VideoTransformerBase
 import threading
-
+import gdown
 # RTC 설정 정의
 RTC_CONFIGURATION = RTCConfiguration({"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]})
 
@@ -59,28 +59,25 @@ def predict_skin_disease(model, img_array, meta_input):
     predictions = model.predict([img_array, meta_input])
     return predictions[0]
 
+
+
+
 # 메타데이터 로드
 metadata_df = load_metadata('HAM10000_metadata.csv')
 
 
-# 모델 파일 URL
-model_file_url = "https://myjonggu.s3.ap-southeast-2.amazonaws.com/dense201_0125.h5"
+# Google Drive 공유 링크
+google_drive_url = 'https://drive.google.com/uc?id=11t8zk8vkiu-g4KWbzYxiWaM6mvBzasiv'
 
 # 모델 파일을 임시 파일로 다운로드
-response = requests.get(model_file_url)
-if response.status_code == 200:
-    temp_file = tempfile.NamedTemporaryFile(delete=False, mode='wb')  # 이진 쓰기 모드로 열기
-    temp_file.write(response.content)
-    temp_file.close()
+temp_file = tempfile.NamedTemporaryFile(delete=False, suffix='.h5')  # 확장자 추가
+gdown.download(google_drive_url, temp_file.name, quiet=False)
 
-    # 모델 로드
-    model = load_model(temp_file.name)
+# 모델 로드
+model = load_model(temp_file.name)
 
-    # 임시 파일 삭제
-    os.remove(temp_file.name)
-else:
-    st.error("모델 파일 다운로드 실패: HTTP 상태 코드 {}".format(response.status_code))
-
+# 임시 파일 삭제
+os.remove(temp_file.name)
 
 # 클래스 이름 매핑
 class_names = {
