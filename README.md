@@ -2,7 +2,7 @@
 # 2. ﻿﻿﻿가상환경 설정하기
 # 3. ﻿﻿﻿requirments.txt 로 라이브러리 다운로드하기
 # 4. ﻿﻿﻿01. 비대면 진료 감성분석 폴더 - Codes - 앱리뷰분석.ipynb 파일 열기
-    1. ﻿﻿﻿폰트설정하기 (win os-malgun ttf, Mac os - apple gothic)
+    1. ﻿﻿﻿폰트설정하기 (win os-malgun.ttf, Mac os - apple gothic)
     2. ﻿﻿﻿Csv 파일 불러오기
     3. ﻿﻿﻿24셀에 있는 mysql host 및 패스워드 본인 환경에 맞게 설정
     4. ﻿﻿﻿61셀 review.model.krs 본인 루트에 두고 모델 불러오기
@@ -12,7 +12,7 @@
     1. client_id 및 Client_secret을 아래와 같이 설정
         * ﻿﻿client_id = "********"
         * ﻿﻿client_secret = "********"
-    2. Mysal host 및 패스원 본인 환경에 맞게 설정
+    2. Mysql host 및 패스원 본인 환경에 맞게 설정
 # 7. 05. skin_disease_detection 폴더- Code- cnn_metadata_combined.ipynb 파일 열기
     1. ﻿﻿﻿피부질환 이미지 및 메타데이터 다운 (https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000)
     2. ﻿﻿﻿셀 6 번째에 다운받은 이미지 및 메타데이터 경로 설정
